@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plaza Sky Travel & Tourism – Qatar's Trusted Travel Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="design.png" alt="Plaza Sky Travel & Tourism" id="logo-img"
+             onerror="this.style.display='none'; document.getElementById('logo-text').style.display='flex';" />
+        <span id="logo-text" class="logo-text" style="display:none">
+          <span class="logo-icon">✦</span>
+          <span>Plaza<strong>Sky</strong> Travels</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#corporate">Corporate</a>
+        <a href="#clients">Our Clients</a>
+        <a href="#contact" class="btn-nav">Book Now</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMobile()">About</a>
+      <a href="#services" onclick="closeMobile()">Services</a>
+      <a href="#packages" onclick="closeMobile()">Packages</a>
+      <a href="#corporate" onclick="closeMobile()">Corporate</a>
+      <a href="#clients" onclick="closeMobile()">Our Clients</a>
+      <a href="#contact" onclick="closeMobile()" class="btn-mobile">Book Now</a>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="home">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1800&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=1800&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1800&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tagline">
+        <span class="htag-badge">✦ IATA Accredited</span>
+        <span class="htag-sep">|</span>
+        <span class="htag-loc">📍 Based in Doha, Qatar</span>
+      </div>
+      <h1>Your Journey<br/><span class="gold">Beyond the Horizon</span></h1>
+      <p class="hero-sub">A trusted travel management company delivering comprehensive, cost-effective travel solutions for corporates, individuals, groups and families — we're with you all the way.</p>
+      <div class="hero-buttons">
+        <a href="#packages" class="btn-primary">Explore Packages</a>
+        <a href="#contact" class="btn-outline">Plan My Trip</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to discover</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-dots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
+      <button class="dot" onclick="goToSlide(2)"></button>
+    </div>
+  </section>
+
+  <!-- ═══ SEARCH BAR ═══ -->
+  <section class="search-bar-section">
+    <div class="search-bar">
+      <div class="search-field">
+        <label>Destination</label>
+        <input type="text" placeholder="Where do you want to go?" />
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <label>Departure</label>
+        <input type="date" />
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <label>Return</label>
+        <input type="date" />
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <label>Travelers</label>
+        <select>
+          <option>1 Adult</option>
+          <option>2 Adults</option>
+          <option>Family (2+2)</option>
+          <option>Group</option>
+          <option>Corporate</option>
+        </select>
+      </div>
+      <button class="btn-search" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Search</button>
+    </div>
+  </section>
+
+  <!-- ═══ STATS ═══ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stat-item">
+        <span class="stat-num" data-target="12000">0</span><span class="stat-plus">+</span>
+        <p>Happy Travelers</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="85">0</span><span class="stat-plus">+</span>
+        <p>Destinations</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="12">0</span><span class="stat-plus"></span>
+        <p>Years of Experience</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="98">0</span><span class="stat-plus">%</span>
+        <p>Client Satisfaction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT US ═══ -->
+  <section id="about" class="section about-section">
+    <div class="container about-grid">
+      <div class="about-images">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=85" alt="Travel" class="about-img-main" />
+        <div class="about-img-badge">
+          <span class="badge-num">IATA</span>
+          <span class="badge-txt">Accredited Agency</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-label">Who We Are</p>
+        <h2>About <span class="gold">Plaza Sky</span></h2>
+        <p class="about-lead"><strong>PLAZA SKY Travel & Tourism</strong> is a trusted, IATA-accredited travel management company staffed by multinational professionals with more than 12 years of industry experience. Based in Doha, we serve corporates, individuals, groups and families across Qatar — we're with you all the way.</p>
+        <p>With strategically placed branches across Qatar and global alliances with the best names in travel, we deliver customized, cost-effective solutions for both business and leisure — managing every requirement from the simplest to the most complex.</p>
+        <div class="about-pills">
+          <div class="about-pill">
+            <span class="pill-icon">🎯</span>
+            <div><strong>Purpose</strong><span>Add value to every travel spend</span></div>
+          </div>
+          <div class="about-pill">
+            <span class="pill-icon">🚀</span>
+            <div><strong>Mission</strong><span>Hospitality, commitment & satisfaction</span></div>
+          </div>
+          <div class="about-pill">
+            <span class="pill-icon">🌐</span>
+            <div><strong>Vision</strong><span>Boundless travel management leader</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section id="services" class="section services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What We Offer</p>
+        <h2>Our <span class="gold">Services</span></h2>
+        <p class="section-sub">Full inbound & outbound travel services — tailored to every need</p>
+      </div>
+      <div class="services-compact">
+        <div class="svc-tile"><span>✈</span><p>Business Travel</p></div>
+        <div class="svc-tile"><span>🛩</span><p>Charter Flights</p></div>
+        <div class="svc-tile"><span>🏨</span><p>Hotel Reservations</p></div>
+        <div class="svc-tile"><span>🚗</span><p>Car Rentals</p></div>
+        <div class="svc-tile"><span>🗂</span><p>Visa Assistance</p></div>
+        <div class="svc-tile"><span>🛡</span><p>Travel Insurance</p></div>
+        <div class="svc-tile"><span>🏠</span><p>Apartments</p></div>
+        <div class="svc-tile"><span>🪪</span><p>Int'l Driving License</p></div>
+        <div class="svc-tile"><span>🩺</span><p>Medical Tours</p></div>
+        <div class="svc-tile"><span>🎟</span><p>MICE</p></div>
+        <div class="svc-tile"><span>📋</span><p>Reservation & Ticketing</p></div>
+        <div class="svc-tile"><span>🗺</span><p>Sightseeing Tours</p></div>
+        <div class="svc-tile"><span>🚢</span><p>Cruise Packages</p></div>
+        <div class="svc-tile"><span>🎓</span><p>Educational Tours</p></div>
+        <div class="svc-tile"><span>🤝</span><p>Meet & Assist</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PACKAGES ═══ -->
+  <section id="packages" class="section packages">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Curated for You</p>
+        <h2>Featured <span class="gold">Packages</span></h2>
+        <p class="section-sub">All-inclusive itineraries designed for maximum comfort and discovery</p>
+      </div>
+      <div class="packages-tabs">
+        <button class="tab active" onclick="filterPackages('all', this)">All</button>
+        <button class="tab" onclick="filterPackages('luxury', this)">Luxury</button>
+        <button class="tab" onclick="filterPackages('adventure', this)">Adventure</button>
+        <button class="tab" onclick="filterPackages('family', this)">Family</button>
+        <button class="tab" onclick="filterPackages('honeymoon', this)">Honeymoon</button>
+      </div>
+      <div class="packages-grid" id="packagesGrid">
+        <div class="pkg-card" data-cat="luxury honeymoon">
+          <div class="pkg-img">
+            <img src="https://images.unsplash.com/photo-1439130490301-25e322d88054?w=600&q=80" alt="Maldives" />
+            <span class="pkg-badge">Best Seller</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span>🌴 Maldives</span><span>7 Nights</span></div>
+            <h3>Maldives Overwater Villa Escape</h3>
+            <p>Private overwater bungalow, all-inclusive dining, snorkeling and sunset dolphin cruise.</p>
+            <ul class="pkg-includes">
+              <li>✓ Return flights from Doha</li>
+              <li>✓ Overwater villa accommodation</li>
+              <li>✓ All meals & activities</li>
+            </ul>
+            <div class="pkg-footer">
+              <div class="pkg-price"><span class="from">From</span><strong>QAR 14,900</strong><span class="per">/ person</span></div>
+              <a href="#contact" class="btn-book">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-card" data-cat="family adventure">
+          <div class="pkg-img">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Switzerland" />
+            <span class="pkg-badge new">New</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span>🏔 Switzerland</span><span>10 Nights</span></div>
+            <h3>Swiss Alps & Lakes Grand Tour</h3>
+            <p>Explore Zurich, Lucerne, Interlaken and Zermatt with ski passes and panoramic train rides.</p>
+            <ul class="pkg-includes">
+              <li>✓ Return flights from Doha</li>
+              <li>✓ 4-star hotel stays</li>
+              <li>✓ Swiss Travel Pass included</li>
+            </ul>
+            <div class="pkg-footer">
+              <div class="pkg-price"><span class="from">From</span><strong>QAR 11,500</strong><span class="per">/ person</span></div>
+              <a href="#contact" class="btn-book">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-card" data-cat="luxury honeymoon">
+          <div class="pkg-img">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80" alt="Paris" />
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span>🗼 France</span><span>6 Nights</span></div>
+            <h3>Paris Romance & French Riviera</h3>
+            <p>Eiffel Tower dinner, champagne breakfast, Versailles day trip and Nice coastal escape.</p>
+            <ul class="pkg-includes">
+              <li>✓ Business class flights</li>
+              <li>✓ 5-star boutique hotels</li>
+              <li>✓ Private guided tours</li>
+            </ul>
+            <div class="pkg-footer">
+              <div class="pkg-price"><span class="from">From</span><strong>QAR 9,800</strong><span class="per">/ person</span></div>
+              <a href="#contact" class="btn-book">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-card" data-cat="adventure family">
+          <div class="pkg-img">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali" />
+            <span class="pkg-badge">Popular</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span>🌺 Indonesia</span><span>8 Nights</span></div>
+            <h3>Bali Discovery & Culture Tour</h3>
+            <p>Ubud rice terraces, temple ceremonies, surf lessons, spa retreats and volcano sunrise trek.</p>
+            <ul class="pkg-includes">
+              <li>✓ Return flights from Doha</li>
+              <li>✓ Villa accommodation</li>
+              <li>✓ Daily breakfast + tours</li>
+            </ul>
+            <div class="pkg-footer">
+              <div class="pkg-price"><span class="from">From</span><strong>QAR 7,200</strong><span class="per">/ person</span></div>
+              <a href="#contact" class="btn-book">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-card" data-cat="luxury adventure">
+          <div class="pkg-img">
+            <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=600&q=80" alt="Japan" />
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span>⛩ Japan</span><span>12 Nights</span></div>
+            <h3>Japan in Full Bloom – Tokyo to Kyoto</h3>
+            <p>Cherry blossoms, bullet trains, zen temples and a ryokan hot spring stay.</p>
+            <ul class="pkg-includes">
+              <li>✓ Return flights from Doha</li>
+              <li>✓ City & ryokan hotels</li>
+              <li>✓ JR Rail Pass included</li>
+            </ul>
+            <div class="pkg-footer">
+              <div class="pkg-price"><span class="from">From</span><strong>QAR 10,400</strong><span class="per">/ person</span></div>
+              <a href="#contact" class="btn-book">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-card" data-cat="family">
+          <div class="pkg-img">
+            <img src="orlando.jpg" alt="Orlando" />
+            <span class="pkg-badge new">New</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span>🎢 USA</span><span>9 Nights</span></div>
+            <h3>Orlando Family Magic – Disney & Universal</h3>
+            <p>Theme park passes, family resort, airport transfers and a surprise character breakfast.</p>
+            <ul class="pkg-includes">
+              <li>✓ Return flights from Doha</li>
+              <li>✓ Disney resort stay</li>
+              <li>✓ Park tickets included</li>
+            </ul>
+            <div class="pkg-footer">
+              <div class="pkg-price"><span class="from">From</span><strong>QAR 8,600</strong><span class="per">/ family</span></div>
+              <a href="#contact" class="btn-book">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHY US ═══ -->
+  <section class="why-us">
+    <div class="why-bg" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1800&q=80')"></div>
+    <div class="why-overlay"></div>
+    <div class="container why-content">
+      <div class="why-text">
+        <p class="section-label light">Why Choose Us</p>
+        <h2>Travel with Confidence.<br/><span class="gold">Travel with Plaza Sky.</span></h2>
+        <p>Our attitude, our efforts, our commitment has helped us gain the trust of our steadily growing list of customers and built our reputation as the preferred name in Qatar.</p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-icon">✈</div>
+            <div>
+              <h4>IATA Accredited Agency</h4>
+              <p>Fully certified and trusted by leading airlines and hotel chains worldwide.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">⚡</div>
+            <div>
+              <h4>24/7 Customer Support</h4>
+              <p>Our team is always on call — before, during, and after your journey, every day of the week.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">👥</div>
+            <div>
+              <h4>Multinational Expert Team</h4>
+              <p>Multilingual, multicultural travel professionals with 4 to 12 years of industry experience.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">🌐</div>
+            <div>
+              <h4>B2B / B2C Across All Sectors</h4>
+              <p>Cross-sector services for corporates, individuals, groups and families — all equally served.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">🗂</div>
+            <div>
+              <h4>Qatar Tourist Visa Service</h4>
+              <p>We facilitate inbound tourist visas for Qatar — seamless processing for individuals and groups.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">🌍</div>
+            <div>
+              <h4>Full Inbound & Outbound Range</h4>
+              <p>Complete travel services covering every destination worldwide — from the simplest to the most complex.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-side">
+        <div class="why-cert-box">
+          <div class="cert-logo">IATA</div>
+          <p>Accredited Member</p>
+          <hr />
+          <div class="why-badges">
+            <span>Qatar Tourism Licensed</span>
+            <span>Global Travel Alliances</span>
+            <span>B2B / B2C Services</span>
+            <span>24/7 Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CORPORATE TRAVEL ═══ -->
+  <section id="corporate" class="section corporate">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">For Business</p>
+        <h2>Corporate <span class="gold">Travel</span></h2>
+        <p class="section-sub">We are known for the wide-ranging corporate travel services we offer. Depend on our advisors to deliver solutions customized to your company's specific requirements.</p>
+      </div>
+      <div class="corporate-grid">
+        <div class="corporate-text">
+          <p>Our travel advisors will analyze your recent corporate travel records and provide the most personalized and cost-effective travel plans. We deal with small and large companies equally well.</p>
+          <p>Our in-depth analysis and understanding of your company's travel history along with your immediate requirements helps us deliver superior service through consistent leadership, controlled growth and unwavering commitment.</p>
+          <div class="corporate-benefits">
+            <div class="corp-benefit">
+              <div class="corp-num">01</div>
+              <div>
+                <h4>Best Possible Fares</h4>
+                <p>Access to exclusive negotiated airfares and hotel rates not available publicly.</p>
+              </div>
+            </div>
+            <div class="corp-benefit">
+              <div class="corp-num">02</div>
+              <div>
+                <h4>Volume-Based Discounts</h4>
+                <p>Further discounts on our services based on the volume and frequency of your business travel.</p>
+              </div>
+            </div>
+            <div class="corp-benefit">
+              <div class="corp-num">03</div>
+              <div>
+                <h4>Best Accommodations</h4>
+                <p>Premium stays at strategic locations in tune with your business needs — at the lowest possible cost.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary">Enquire for Corporate Account</a>
+        </div>
+        <div class="corporate-img">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80" alt="Corporate Travel" />
+          <div class="corporate-img-overlay">
+            <div class="corp-stat"><strong>12+</strong><span>Corporate Clients</span></div>
+            <div class="corp-stat"><strong>24/7</strong><span>Dedicated Support</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CORPORATE ACCOUNTS ═══ -->
+  <section id="clients" class="section clients-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Trusted By</p>
+        <h2>Corporate <span class="gold">Accounts</span></h2>
+        <p class="section-sub">Leading organizations across Qatar trust Plaza Sky Travel & Tourism for their travel management needs</p>
+      </div>
+    </div>
+
+    <!-- full-width carousel — intentionally outside .container -->
+    <div class="logo-carousel-wrap">
+      <div class="logo-carousel-track">
+
+        <!-- ── Set 1 ── -->
+        <div class="logo-slide"><img src="logos/alkass.png" alt="Al Kass Sports Channels" /></div>
+        <div class="logo-slide"><img src="logos/al-markhiya.png" alt="Al-Markhiya Sports Club" /></div>
+        <div class="logo-slide"><img src="logos/anhri.png" alt="Arab Network for Human Rights" /></div>
+        <div class="logo-slide"><img src="logos/jabr-group.png" alt="Jabr Group" /></div>
+        <div class="logo-slide"><img src="logos/nhrc.png" alt="National Human Rights Committee" /></div>
+        <div class="logo-slide"><img src="logos/newton.png" alt="Newton International Schools" /></div>
+        <div class="logo-slide"><img src="logos/diplomatic-club.png" alt="The Diplomatic Club" /></div>
+        <div class="logo-slide"><img src="logos/mcit.png" alt="Ministry of Communications &amp; IT" /></div>
+        <div class="logo-slide"><img src="logos/ebla.png" alt="EBLA Computer Consultancy" /></div>
+        <div class="logo-slide"><img src="logos/arabia-insurance.png" alt="Arabia Insurance" /></div>
+        <div class="logo-slide"><img src="logos/bakertilly.png" alt="Baker Tilly" /></div>
+        <div class="logo-slide"><img src="logos/qatar-tv.png" alt="Qatar Television" /></div>
+        <div class="logo-slide"><img src="logos/moe.png" alt="Ministry of Education" /></div>
+
+        <!-- duplicates injected by script.js for seamless loop -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GOOGLE REVIEWS ═══ -->
+  <section id="reviews" class="section reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Client Testimonials</p>
+        <h2>What Our <span class="gold">Clients Say</span></h2>
+        <p class="section-sub">Real experiences shared by our travellers on Google</p>
+        <div class="google-score">
+          <div class="g-icon">G</div>
+          <div class="g-info">
+            <div class="g-stars">★★★★★</div>
+            <span class="g-count">5.0 &nbsp;·&nbsp; 19 reviews on Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- full-width scrolling carousel -->
+    <div class="reviews-carousel-wrap">
+      <div class="reviews-carousel-track" id="reviewsTrack">
+
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-av" style="background:#7B1FA2">m</div>
+            <div class="reviewer-meta">
+              <strong>miss caprice</strong>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <span class="g-badge">G</span>
+          </div>
+          <p class="review-text">"They were extremely helpful in assisting me with booking my trip for Omra. The team was professional, patient, and made the entire process smooth and stress-free. I highly recommend them to anyone looking for reliable travel services 🙏"</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-av" style="background:#1565C0">S</div>
+            <div class="reviewer-meta">
+              <strong>Samer Alhamwieh</strong>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <span class="g-badge">G</span>
+          </div>
+          <p class="review-text">"This is one of the best travel agencies I have dealt with in Qatar. I have used their services multiple times, including Umrah visas, flight and hotel bookings. Truly exceptional service!"</p>
+          <span class="review-date">3 months ago</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-av" style="background:#5C1233">S</div>
+            <div class="reviewer-meta">
+              <strong>Souhail El-Makhloufi</strong>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <span class="g-badge">G</span>
+          </div>
+          <p class="review-text" dir="rtl">"مكتب بلازا سكاي من أرقى المكاتب في الدوحة، كتعامل راقي وسرعة في إنجاز المعاملات، يهتمون بالعميل وكأنك واحد من أهلهم. شكراً لكم على الخدمة المميزة وخصوصاً السيدة إيمان دريسي."</p>
+          <span class="review-date">9 months ago</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-av" style="background:#2E7D32">M</div>
+            <div class="reviewer-meta">
+              <strong>Mohammed Saleh</strong>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <span class="g-badge">G</span>
+          </div>
+          <p class="review-text">"I recently booked a ticket through Plaza Sky Travels and had a great experience. They offered a very competitive price, and their team was professional and helpful throughout the entire process."</p>
+          <span class="review-date">11 months ago</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-av" style="background:#E65100">K</div>
+            <div class="reviewer-meta">
+              <strong>Ki Ka</strong>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <span class="g-badge">G</span>
+          </div>
+          <p class="review-text" dir="rtl">"من أروع التجارب مع مكتب سفريات بلازا سكاي! تنظيم أكثر من رائع واهتمام بأدق التفاصيل. كانت الرحلة فوق كل توقعاتي، أكيد رح تكونوا خياري الأول دائماً 💗"</p>
+          <span class="review-date">a year ago</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-av" style="background:#00695C">ع</div>
+            <div class="reviewer-meta">
+              <strong>عبدالرحمان موساوي</strong>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <span class="g-badge">G</span>
+          </div>
+          <p class="review-text">"Meilleure agence de voyage à Doha — accueil chaleureux et très serviable. Je les recommande fortement ! 👍👍"</p>
+          <span class="review-date">9 months ago</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <div class="reviewer-av" style="background:#AD1457">O</div>
+            <div class="reviewer-meta">
+              <strong>Oliwia</strong>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <span class="g-badge">G</span>
+          </div>
+          <p class="review-text">"It was a really great experience — we went to see the sands, rode a camel and watched the sunset over the desert. Amazing!"</p>
+          <span class="review-date">a year ago</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA BANNER ═══ -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready for Your Next Adventure?</h2>
+        <p>Get a free personalized travel plan from our experts — no obligation, just inspiration.</p>
+        <a href="#contact" class="btn-primary large">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" class="section contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="section-label">Get in Touch</p>
+        <h2>Plan Your <span class="gold">Dream Trip</span></h2>
+        <p>Talk to our travel experts and let us create the perfect itinerary for you. We're here every day of the week.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="c-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              <p>C - Ring Road, Near Ramada Signal<br/>Zone 24, Street 823, Building Ramada 7 No 72<br/>Doha, Qatar</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">📞</div>
+            <div>
+              <strong>Phone</strong>
+              <p>+974 6000 3625 / 77790991</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">✉</div>
+            <div>
+              <strong>Email</strong>
+              <p>finance@plaza-skytravel.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">🌐</div>
+            <div>
+              <strong>Website</strong>
+              <p>www.plaza-skytravel.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">🕐</div>
+            <div>
+              <strong>Hours of Operation</strong>
+              <p>Sat – Thu: 8:00 AM – 12:00 Midnight<br/>Friday: 4:00 PM – 12:00 Midnight<br/>Support: 24/7</p>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/plazaskyqatar/" target="_blank" rel="noopener" class="social-link">f</a>
+          <a href="https://www.linkedin.com/company/plaza-sky-travel-tourism/?originalSubdomain=qa" target="_blank" rel="noopener" class="social-link">in</a>
+          <a href="https://www.instagram.com/plazaskytravel/" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/97460003625" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <input type="hidden" name="access_key" value="0c85c7d0-4066-4cdb-92ca-36ca3435fe26" />
+          <input type="hidden" name="subject" value="New Travel Enquiry – Plaza Sky Travel" />
+          <input type="hidden" name="from_name" value="Plaza Sky Website" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="+974 ..." required />
+            </div>
+            <div class="form-group">
+              <label>Travel Type</label>
+              <select name="travel_type">
+                <option value="">Select type</option>
+                <option>Leisure / Holiday</option>
+                <option>Corporate Travel</option>
+                <option>Group Travel</option>
+                <option>Honeymoon</option>
+                <option>Medical Tour</option>
+                <option>Educational Tour</option>
+                <option>MICE / Event</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Destination</label>
+            <input type="text" name="destination" placeholder="Where would you like to go?" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell us about your travel requirements..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full">Send Message</button>
+          <div class="form-success" id="formSuccess">
+            ✓ Message sent! Our team will contact you within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="design.png" alt="Plaza Sky Travel & Tourism"
+               onerror="this.style.display='none'; document.getElementById('footer-logo-text').style.display='flex';" />
+          <span id="footer-logo-text" class="logo-text footer-logo-text" style="display:none">
+            <span class="logo-icon">✦</span>
+            Plaza<strong>Sky</strong> Travels
+          </span>
+        </div>
+        <p>Qatar's trusted travel management company — delivering comprehensive, cost-effective travel solutions for corporates, individuals, groups and families across Qatar and beyond.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/plazaskyqatar/" target="_blank" rel="noopener">f</a>
+          <a href="https://www.linkedin.com/company/plaza-sky-travel-tourism/?originalSubdomain=qa" target="_blank" rel="noopener">in</a>
+          <a href="https://www.instagram.com/plazaskytravel/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://wa.me/97460003625" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#corporate">Corporate Travel</a></li>
+          <li><a href="#clients">Our Clients</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Business Travel</a></li>
+          <li><a href="#services">Charter Flights</a></li>
+          <li><a href="#services">Hotel Reservations</a></li>
+          <li><a href="#services">Visa Assistance</a></li>
+          <li><a href="#services">MICE Services</a></li>
+          <li><a href="#services">Medical Tours</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li>📍 C-Ring Road, Near Ramada Signal, Zone 24, Street 823, Doha – Qatar</li>
+          <li>📞 +974 6000 3625 / 77790991</li>
+          <li>✉ finance@plaza-skytravel.com</li>
+          <li>🌐 www.plaza-skytravel.com</li>
+          <li>🕐 Sat–Thu: 8AM–12AM | Fri: 4PM–12AM</li>
+        </ul>
+        <div class="footer-cert">
+          <span>IATA Accredited</span>
+          <span>Qatar Tourism Licensed</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Plaza Sky Travel & Tourism. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <!-- ═══ WHATSAPP FLOAT ═══ -->
+  <a href="https://wa.me/97460003625" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ═══ BACK TO TOP ═══ -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
